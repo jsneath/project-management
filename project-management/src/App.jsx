@@ -8,6 +8,7 @@ function App() {
     <div>
       {/* This is JSX! */}
       <h1>Project Management</h1>
+
       <Board />
     </div>
   );

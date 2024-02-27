@@ -10,7 +10,6 @@ const TaskCard = ({ id, title, description, index }) => {
           {...provided.dragHandleProps}
           className="taskCard"
         >
-          {console.log("Task ID:", id, "Draggable ID:", id.toString())}
           <h3>{title}</h3> {/* Display the task title */}
           <p>{description}</p> {/* Display the task description */}
         </div>

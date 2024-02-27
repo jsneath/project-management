@@ -2,11 +2,12 @@ import Column from "./Column";
 // import TaskCard from "./TaskCard";
 import { DragDropContext } from "react-beautiful-dnd";
 import { useState } from "react";
+import "../index.css";
 
 const Board = () => {
   const [tasks, setTasks] = useState([
     { id: 1, title: "Create UI Design", description: "...", column: "Done" },
-    { id: 2, title: "add colour", description: "...", column: "Done" },
+    { id: 2, title: "addbb colour", description: "...", column: "Done" },
     { id: 3, title: "add colour", description: "...", column: "In Progress" },
   ]);
 

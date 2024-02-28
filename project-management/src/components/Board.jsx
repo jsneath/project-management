@@ -47,9 +47,9 @@ const Board = () => {
     // This will depend on how your tasks and columns are structured
   };
 
-  // const addTask = (newTask) => {
-  //   setTasks([...tasks, newTask]);
-  // };
+  const addTask = (newTask) => {
+    setTasks([...tasks, newTask]);
+  };
 
   // Example function to remove a task (this also uses setTasks)
   // const removeTask = (taskId) => {
@@ -58,6 +58,7 @@ const Board = () => {
 
   return (
     <DragDropContext onDragEnd={handleOnDragEnd}>
+      <button className="newTaskButton">Create new task</button>
       <div className="board">
         {/* Render columns based on task data */}
         {allColumns.map((columnName) => (

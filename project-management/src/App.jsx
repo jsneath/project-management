@@ -2,6 +2,7 @@
 
 import Board from "./components/Board";
 import "./App.css";
+import "./index.css";
 
 function App() {
   return (

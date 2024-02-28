@@ -8,3 +8,63 @@
   margin: 0 10px; /* Adjust the margin as needed */
   /* other styles for your column */
 }
+
+.newTaskButton {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 10px;
+  color: white;
+  transition: transform 0.1s ease-in-out;
+  font-size: 1.25em;
+  border: none;
+}
+
+.newTaskButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.newTaskButton:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- task card */
+
+.taskCard {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 10px;
+  color: white;
+  transition: transform 0.1s ease-in-out;
+}
+
+.taskCard h3 {
+  font-size: 1.25em;
+  margin-bottom: 0.5em;
+}
+
+.taskCard p {
+  font-size: 1em;
+}
+
+/* Effects when dragging */
+.taskCard.is-dragging {
+  transform: rotate(3deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* You can add :hover and :active states for more interactivity */
+.taskCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.taskCard:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}

@@ -6,9 +6,27 @@ import "../index.css";
 
 const Board = () => {
   const [tasks, setTasks] = useState([
-    { id: 1, title: "Create UI Design", description: "...", column: "Done" },
-    { id: 2, title: "addbb colour", description: "...", column: "Done" },
-    { id: 3, title: "add colour", description: "...", column: "In Progress" },
+    {
+      id: 1,
+      title: "Create UI Design",
+      description: "...",
+      dueDate: "20/04/2024",
+      column: "Done",
+    },
+    {
+      id: 2,
+      title: "addbb colour",
+      description: "...",
+      dueDate: "20/04/24",
+      column: "Done",
+    },
+    {
+      id: 3,
+      title: "add colour",
+      description: "...",
+      dueDate: "20/04/24",
+      column: "In Progress",
+    },
   ]);
 
   const allColumns = ["To Do", "In Progress", "Done"];
@@ -56,9 +74,28 @@ const Board = () => {
   //   setTasks(tasks.filter((task) => task.id !== taskId));
   // };
 
+  const handleAddTaskClick = () => {
+    const title = prompt("Enter task title:");
+    if (title) {
+      const description = prompt("Enter task description:");
+      const dueDate = prompt("Enter due date:");
+      // Assuming you want to add to the "To Do" column by default
+      const newTask = {
+        id: tasks.length + 1, // Simple id generation, consider using a more robust method
+        title,
+        description,
+        dueDate,
+        column: "To Do",
+      };
+      setTasks([...tasks, newTask]);
+    }
+  };
+
   return (
     <DragDropContext onDragEnd={handleOnDragEnd}>
-      <button className="newTaskButton">Create new task</button>
+      <button className="newTaskButton" onClick={handleAddTaskClick}>
+        Create new task
+      </button>
       <div className="board">
         {/* Render columns based on task data */}
         {allColumns.map((columnName) => (

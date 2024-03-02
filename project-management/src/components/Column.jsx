@@ -20,6 +20,7 @@ const Column = ({ name, tasks, columnId }) => {
               id={task.id}
               title={task.title}
               description={task.description}
+              dueDate={task.dueDate}
               index={index}
             />
           ))}

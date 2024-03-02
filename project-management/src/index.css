@@ -68,3 +68,9 @@
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
+
+.taskCard .dueDate {
+  font-size: 0.8em;
+  margin-top: 10px;
+  color: #555; /* Or any color that matches your design */
+}

@@ -2,29 +2,32 @@ import Column from "./Column";
 // import TaskCard from "./TaskCard";
 import { DragDropContext } from "react-beautiful-dnd";
 import { useState } from "react";
+import AddTaskModal from "./modal";
 import "../index.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Board = () => {
+  const [showModal, setShowModal] = useState(false);
   const [tasks, setTasks] = useState([
     {
       id: 1,
       title: "Create UI Design",
       description: "...",
-      dueDate: "20/04/2024",
+      dueDate: "2024-04-20",
       column: "Done",
     },
     {
       id: 2,
       title: "addbb colour",
       description: "...",
-      dueDate: "20/04/24",
+      dueDate: "2024-04-20",
       column: "Done",
     },
     {
       id: 3,
       title: "add colour",
       description: "...",
-      dueDate: "20/04/24",
+      dueDate: "2024-04-20",
       column: "In Progress",
     },
   ]);
@@ -65,37 +68,31 @@ const Board = () => {
     // This will depend on how your tasks and columns are structured
   };
 
-  const addTask = (newTask) => {
-    setTasks([...tasks, newTask]);
-  };
+  // const addTask = (newTask) => {
+  //   setTasks([...tasks, newTask]);
+  // };
 
   // Example function to remove a task (this also uses setTasks)
   // const removeTask = (taskId) => {
   //   setTasks(tasks.filter((task) => task.id !== taskId));
   // };
 
-  const handleAddTaskClick = () => {
-    const title = prompt("Enter task title:");
-    if (title) {
-      const description = prompt("Enter task description:");
-      const dueDate = prompt("Enter due date:");
-      // Assuming you want to add to the "To Do" column by default
-      const newTask = {
-        id: tasks.length + 1, // Simple id generation, consider using a more robust method
-        title,
-        description,
-        dueDate,
-        column: "To Do",
-      };
-      setTasks([...tasks, newTask]);
-    }
+  const handleAddTask = (newTask) => {
+    newTask.id = tasks.length + 1; // Simple id generation
+    newTask.column = "To Do"; // Default column
+    setTasks([...tasks, newTask]);
   };
 
   return (
     <DragDropContext onDragEnd={handleOnDragEnd}>
-      <button className="newTaskButton" onClick={handleAddTaskClick}>
+      <button className="newTaskButton" onClick={() => setShowModal(true)}>
         Create new task
       </button>
+      <AddTaskModal
+        show={showModal}
+        handleClose={() => setShowModal(false)}
+        handleSubmit={handleAddTask}
+      />
       <div className="board">
         {/* Render columns based on task data */}
         {allColumns.map((columnName) => (

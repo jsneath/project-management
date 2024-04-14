@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import { Modal, Button } from "react-bootstrap";
 
@@ -7,9 +7,22 @@ const AddTaskModal = ({ show, handleClose, handleSubmit }) => {
   const [description, setDescription] = useState("");
   const [dueDate, setDueDate] = useState(new Date());
 
+  useEffect(() => {
+    if (show) {
+      setTitle("");
+      setDescription("");
+      setDueDate(new Date()); // You can set this to null or any default value you prefer
+    }
+  }, [show]);
+
   const submit = () => {
-    handleSubmit({ title, description, dueDate });
-    handleClose();
+    if (title.trim() && description.trim()) {
+      // Basic validation to ensure non-empty submissions
+      handleSubmit({ title, description, dueDate });
+      handleClose(); // This might already reset 'show', but we clear inputs explicitly above
+    } else {
+      alert("Please fill in all fields.");
+    }
   };
 
   return (

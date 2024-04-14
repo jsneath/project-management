@@ -81,6 +81,7 @@ const Board = () => {
     newTask.id = tasks.length + 1; // Simple id generation
     newTask.column = "To Do"; // Default column
     setTasks([...tasks, newTask]);
+    setShowModal(false);
   };
 
   return (

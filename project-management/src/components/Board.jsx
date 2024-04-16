@@ -8,29 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const Board = () => {
   const [showModal, setShowModal] = useState(false);
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      title: "Create UI Design",
-      description: "...",
-      dueDate: "2024-04-20",
-      column: "Done",
-    },
-    {
-      id: 2,
-      title: "addbb colour",
-      description: "...",
-      dueDate: "2024-04-20",
-      column: "Done",
-    },
-    {
-      id: 3,
-      title: "add colour",
-      description: "...",
-      dueDate: "2024-04-20",
-      column: "In Progress",
-    },
-  ]);
+  const [tasks, setTasks] = useState([]);
 
   const allColumns = ["To Do", "In Progress", "Done"];
 

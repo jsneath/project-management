@@ -1,9 +1,10 @@
 // import { useState } from "react";
 
 import Board from "./components/Board";
-import "./App.css";
+
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 function App() {
   return (

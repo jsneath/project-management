@@ -40,3 +40,21 @@
 .read-the-docs {
   color: #888;
 }
+
+.h1,
+h1 {
+  font-size: 2.5em; /* Large text for visibility */
+  font-weight: 700; /* Bold font weight */
+  color: #4a4e69; /* A deep color that matches the aesthetic; adjust as needed */
+  text-align: center; /* Center alignment for the heading */
+  margin-top: 20px; /* Space from the top */
+  margin-bottom: 30px; /* Space below before other content starts */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Responsive typography adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em; /* Slightly smaller on smaller screens */
+  }
+}

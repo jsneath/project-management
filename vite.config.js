@@ -4,5 +4,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/", // No path prefix needed
+  base: "/project-management/", // Set the base to match your GitHub repository path
 });

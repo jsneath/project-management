@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import TaskCard from "./TaskCard";
 import { Droppable } from "react-beautiful-dnd";
 
-const Column = ({ name, tasks, columnId }) => {
+const Column = ({ name, tasks, columnId, deleteTask, editTask }) => {
   return (
     <Droppable droppableId={columnId.toString()}>
       {(provided, snapshot) => (
@@ -22,6 +22,8 @@ const Column = ({ name, tasks, columnId }) => {
               description={task.description}
               dueDate={task.dueDate}
               index={index}
+              onDelete={deleteTask}
+              onEdit={editTask}
             />
           ))}
         </div>

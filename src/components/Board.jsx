@@ -12,6 +12,20 @@ const Board = () => {
 
   const allColumns = ["To Do", "In Progress", "Done"];
 
+  const deleteTask = (taskId) => {
+    setTasks((currentTasks) =>
+      currentTasks.filter((task) => task.id !== taskId)
+    );
+  };
+
+  const editTask = (taskId, updatedTask) => {
+    setTasks((currentTasks) =>
+      currentTasks.map((task) =>
+        task.id === taskId ? { ...task, ...updatedTask } : task
+      )
+    );
+  };
+
   const handleOnDragEnd = (result) => {
     const { destination, source, draggableId } = result;
 
@@ -80,6 +94,8 @@ const Board = () => {
             name={columnName}
             tasks={tasks.filter((task) => task.column === columnName)}
             columnId={columnName}
+            deleteTask={deleteTask}
+            editTask={editTask}
           />
         ))}
       </div>

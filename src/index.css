@@ -79,5 +79,25 @@
 .taskCard .dueDate {
   font-size: 0.8em;
   margin-top: 10px;
-  color: #555;
+  color: white;
+}
+
+.editButton,
+.deleteButton {
+  background: none; /* Removes the button background */
+  border: none; /* Removes the border */
+  padding: 0; /* Adjust padding to your preference */
+  cursor: pointer;
+}
+
+/* Add some space around the icons if needed */
+.editButton i,
+.deleteButton i {
+  padding: 5px; /* Adjust padding to your preference */
+}
+
+/* Optional: Add a hover effect for the icons */
+.editButton:hover i,
+.deleteButton:hover i {
+  color: goldenrod; /* Change icon color on hover */
 }

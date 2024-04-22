@@ -68,9 +68,13 @@ const TaskCard = ({
         >
           <h3>{title}</h3> {/* Display the task title */}
           <p>{description}</p> {/* Display the task description */}
-          <p className="dueDate">Completion date: {displayDate}</p>
-          <button onClick={handleToggleEdit}>Edit</button>
-          <button onClick={handleDelete}>Delete</button>
+          <p className="dueDate">Due by: {displayDate}</p>
+          <button className="editButton" onClick={handleToggleEdit}>
+            <i className="fas fa-edit" style={{ color: "yellow" }}></i>
+          </button>
+          <button className="deleteButton" onClick={handleDelete}>
+            <i className="fas fa-trash" style={{ color: "yellow" }}></i>
+          </button>
         </div>
       )}
     </Draggable>
